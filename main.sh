@@ -25,6 +25,7 @@ source "${SCRIPT_DIR}/modules/backup.sh"
 source "${SCRIPT_DIR}/modules/process_mgmt.sh"
 source "${SCRIPT_DIR}/modules/network_test.sh"
 source "${SCRIPT_DIR}/modules/git_mgmt.sh"
+source "${SCRIPT_DIR}/modules/pkg_mgmt.sh"
 
 # -----------------------------------------------------------
 # 主菜单
@@ -38,6 +39,7 @@ show_menu() {
     echo "4. 进程管理"
     echo "5. 网络连通检测"
     echo "6. Git 仓库管理"
+    echo "7. 软件包管理"
     echo "0. 退出"
     echo "====================================="
 }
@@ -56,6 +58,7 @@ main() {
             4) process_menu ;;
             5) network_menu ;;
             6) git_menu ;;
+            7) pkg_menu ;;
             0) echo "再见！"; exit 0 ;;
             *) echo "无效输入，请重新选择！"; pause ;;
         esac
