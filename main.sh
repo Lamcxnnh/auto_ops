@@ -26,6 +26,8 @@ source "${SCRIPT_DIR}/modules/process_mgmt.sh"
 source "${SCRIPT_DIR}/modules/network_test.sh"
 source "${SCRIPT_DIR}/modules/git_mgmt.sh"
 source "${SCRIPT_DIR}/modules/pkg_mgmt.sh"
+source "${SCRIPT_DIR}/modules/cron_mgmt.sh"
+source "${SCRIPT_DIR}/modules/ufw_mgmt.sh"
 
 # -----------------------------------------------------------
 # 主菜单
@@ -40,6 +42,8 @@ show_menu() {
     echo "5. 网络连通检测"
     echo "6. Git 仓库管理"
     echo "7. 软件包管理"
+    echo "8. 定时任务管理"
+    echo "9. 防火墙管理"
     echo "0. 退出"
     echo "====================================="
 }
@@ -59,6 +63,8 @@ main() {
             5) network_menu ;;
             6) git_menu ;;
             7) pkg_menu ;;
+            8) cron_menu ;;
+            9) ufw_menu ;;
             0) echo "再见！"; exit 0 ;;
             *) echo "无效输入，请重新选择！"; pause ;;
         esac
